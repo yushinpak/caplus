@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import header_web from '../assets/sub/caplus_pc_header_background.jpg';
 import text_logo from '../assets/sub/caplus_text_logo.png';
 import image_logo from '../assets/sub/image_logo.png';
+import red_fill_color from '../assets/sub/red_fill_color.jpg';
 
 // 웹용 asset
 import content_web from '../assets/main/caplus_pc.jpg';
@@ -20,11 +21,34 @@ function DefaultPage() {
             <Button>소개</Button>
             <Button>커리큘럼</Button>
             <Button>지원일정</Button>
-            <Button>지원하기</Button>
+            <a
+              href="http://pf.kakao.com/_tlnhn/chat"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button>지원하기</Button>
+            </a>
           </ButtonContainer>
         </Header>
         <HeaderSpace />
-        <Img src={content_web} alt="photo" />
+        <ContentContainer>
+          <Content src={content_web} alt="photo" />
+          <ApplyContainer>
+            <ApplyLink
+              href={`../public/applicant-form.docx`}
+              download="카플러스_50기_지원서.docx"
+            >
+              <ApplyButton>지원서 다운받기</ApplyButton>
+            </ApplyLink>
+            <ApplyLink
+              href="http://pf.kakao.com/_tlnhn/chat"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ApplyButton>지원하기</ApplyButton>
+            </ApplyLink>
+          </ApplyContainer>
+        </ContentContainer>
       </Container>
     </>
   );
@@ -107,10 +131,10 @@ const Button = styled.button`
   margin-left: 15px;
   transition:
     color 0.3s ease-in-out,
-    font-size 0.3s ease-in-out; 
+    font-size 0.3s ease-in-out;
 
   &:hover {
-    color: red; /* 텍스트 색상이 빨간색으로 변함 */
+    color: red;
     font-size: 18px;
   }
 
@@ -120,19 +144,22 @@ const Button = styled.button`
     }
   }
 
-  /* 클릭 가능하도록 pointer-events 추가 */
   pointer-events: auto;
 `;
 
-
 const Container = styled.div`
+  pointer-events: none;
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-const Img = styled.img`
+const ContentContainer = styled.div`
+  position: relative;
+`;
+
+const Content = styled.img`
   pointer-events: none;
   display: block;
   width: 100%;
@@ -145,4 +172,37 @@ const Img = styled.img`
     content: url(${content_mobile});
     min-height: 50vh;
   }
+`;
+
+const ApplyContainer = styled.div`
+  position: absolute; /* 절대 위치 지정 */
+  bottom: 9%; /* 컨텐츠 하단에서 10% 떨어지게 설정 */
+  left: 50%;
+  transform: translateX(-50%); /* 좌우 중앙 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ApplyLink = styled.a`
+  text-decoration: none; /* 링크 기본 스타일 제거 */
+  margin: 10px 0; /* 버튼 간격 설정 */
+  pointer-events: auto; /* 링크를 클릭 가능하게 설정 */
+`;
+
+const ApplyButton = styled.button`
+  font-family: 'Pretendard-Regular';
+  background: url(${red_fill_color}) no-repeat center center; /* 배경 이미지 설정 */
+
+  background-size: cover; /* 이미지 크기를 버튼 크기에 맞게 조정 */
+  border: none;
+  border-radius: 35px;
+  color: black;
+  color: #e5cece;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px 20px;
+  position: relative;
+  pointer-events: auto; /* 버튼을 클릭 가능하게 설정 */
+  text-align: center; /* 버튼 텍스트 가운데 정렬 */
 `;

@@ -90,8 +90,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-
-    font-family: Pretendard-Regular,Arial, sans-serif;
+    font-family: 'Pretendard-Regular','Arial', 'sans-serif';
 
   }
 
