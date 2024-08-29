@@ -1,18 +1,30 @@
 import styled from 'styled-components';
+import header_web from '../assets/sub/caplus_pc_header_background.jpg';
+import text_logo from '../assets/sub/caplus_text_logo.png';
+import image_logo from '../assets/sub/image_logo.png';
 
 // 웹용 asset
-import caplus_update from '../assets/caplus_update.jpeg';
-import header from '../assets/header.png';
+import content_web from '../assets/main/caplus_pc.jpg';
 
 // 모바일용 asset
-import mobile from '../assets/mobile.jpeg';
+import content_mobile from '../assets/main/caplus_mobile.jpg';
 
 function DefaultPage() {
   return (
     <>
       <Container>
-        <Header src={header} alt="header" />
-        <Img src={caplus_update} alt="photo" />
+        <Header>
+          <TextLogo src={text_logo} alt="카플러스" />
+          <ImageLogo src={image_logo} alt="카플러스" />
+          <ButtonContainer>
+            <Button>소개</Button>
+            <Button>커리큘럼</Button>
+            <Button>지원일정</Button>
+            <Button>지원하기</Button>
+          </ButtonContainer>
+        </Header>
+        <HeaderSpace />
+        <Img src={content_web} alt="photo" />
       </Container>
     </>
   );
@@ -20,40 +32,117 @@ function DefaultPage() {
 
 export default DefaultPage;
 
-const Container = styled.div`
+const Header = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  min-height: 100vh; /* 화면 전체를 커버하기 위해 최소 높이 설정 */
-  height: auto;
-  overflow: auto; /* 스크롤을 가능하게 하되 스크롤바 숨기기 */
-  position: relative; /* Header의 position을 fixed로 설정하기 위한 기준점 설정 */
+  height: 70px;
+  background-image: url(${header_web});
+  z-index: 999;
+  pointer-events: none; /* 헤더를 클릭하지 못하게 설정 */
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const HeaderSpace = styled.div`
+  height: 70px;
+
+  @media (min-width: 800px) {
+    height: 70px;
+  }
+`;
+
+const TextLogo = styled.img`
+  position: fixed;
+  left: 10%;
+  width: 100px;
+
+  @media (max-width: 800px) {
+    left: 5%;
+    width: 80px; /* 모바일에서 로고 크기 조정 */
+  }
+`;
+
+const ImageLogo = styled.img`
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%); /* 중앙 정렬 */
+  width: 30px;
+
+  @media (max-width: 800px) {
+    width: 25px; /* 모바일에서 로고 크기 조정 */
+  }
+`;
+
+const ButtonContainer = styled.div`
+  position: fixed;
+  right: 10%;
+  z-index: 1000; /* 버튼이 헤더 위에 보이도록 높은 z-index 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 800px) {
+    right: 5%;
+    display: flex;
+    justify-content: flex-end;
+  }
+`;
+
+const Button = styled.button`
+  z-index: 1000;
+
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-left: 15px;
+  transition:
+    color 0.3s ease-in-out,
+    font-size 0.3s ease-in-out; 
+
+  &:hover {
+    color: red; /* 텍스트 색상이 빨간색으로 변함 */
+    font-size: 18px;
+  }
+
+  @media (max-width: 800px) {
+    &:not(:last-child) {
+      display: none; /* 마지막 버튼(지원하기)만 보이게 설정 */
+    }
+  }
+
+  /* 클릭 가능하도록 pointer-events 추가 */
+  pointer-events: auto;
 `;
 
 
-
-const Header = styled.img`
-  position: fixed; /* 헤더를 고정 위치로 설정 */
-  top: 0; /* 페이지 상단에 고정 */
-  left: 0;
+const Container = styled.div`
+  min-height: 100vh;
   width: 100%;
-  z-index: 1000; /* 헤더가 항상 위에 표시되도록 z-index 설정 */
-
-  @media (max-width: 768px) {
-    height: 50px;
-  }
+  display: flex;
+  flex-direction: column;
 `;
 
 const Img = styled.img`
-  display: block; /* 이미지에 대해 불필요한 공간을 방지 */
+  pointer-events: none;
+  display: block;
   width: 100%;
-  height: auto; /* 이미지 비율을 유지하면서 높이 자동 조정 */
-  min-height: 100vh; /* 페이지의 콘텐츠가 스크롤 가능하도록 설정 */
-  margin: 0; /* 불필요한 여백 제거 */
-  padding: 0; /* 불필요한 패딩 제거 */
+  height: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 
   @media (max-width: 768px) {
-    content: url(${mobile}); /* 모바일용 이미지를 사용 */
-    min-height: 50vh; /* 모바일에서는 최소 높이를 줄임 */
+    content: url(${content_mobile});
+    min-height: 50vh;
   }
 `;
-
-// 소개, 커리큘럼, 헤더

@@ -89,15 +89,36 @@ const GlobalStyle = createGlobalStyle`
     border-spacing: 0;
   }
 
-  /* 추가적인 글로벌 스타일을 정의할 수 있습니다 */
   body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+
+    font-family: Pretendard-Regular,Arial, sans-serif;
+
   }
 
   a {
     text-decoration: none;
     color: inherit;
   }
+
+  @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 전체 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 12px; /* 스크롤바의 너비 */
+}
+
+/* 스크롤바 배경 */
+::-webkit-scrollbar-track {
+  background-color: #010101; /* 스크롤바 배경색 */
+}
+
+/* 스크롤바 핸들 */
+::-webkit-scrollbar-thumb {
+  background-color: #5d0304; /* 스크롤바 핸들의 색상 */
+}
 `;
