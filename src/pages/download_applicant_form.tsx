@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import header_web from '../assets/sub/caplus_pc_header_background.jpg';
-import text_logo from '../assets/sub/caplus_text_logo.png';
-import image_logo from '../assets/sub/image_logo.png';
+import header_web from '../../public/assets/sub/caplus_pc_header_background.jpg';
+import text_logo from '../../public/assets/sub/caplus_text_logo.png';
+import image_logo from '../../public/assets/sub/image_logo.png';
 
 import red_fill_color from '../assets/sub/red_fill_color.jpg';
 
