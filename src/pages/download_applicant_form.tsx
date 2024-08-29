@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-import header_web from '../../public/assets/sub/caplus_pc_header_background.jpg';
-import text_logo from '../../public/assets/sub/caplus_text_logo.png';
-import image_logo from '../../public/assets/sub/image_logo.png';
+import header_web from '/assets/sub/caplus_pc_header_background.jpg';
+import text_logo from '/assets/sub/caplus_text_logo.png';
+import image_logo from '/assets/sub/image_logo.png';
+import red_fill_color from '/assets/sub/red_fill_color.jpg';
 
-import red_fill_color from '../assets/sub/red_fill_color.jpg';
 
 const DownloadApplicantForm = () => {
   return (
@@ -79,7 +79,8 @@ const ButtonContainer = styled.div`
 const Button = styled.button`
   z-index: 1000;
 
-  color: white;
+  color: #d9b2b5;
+  color: black;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -132,8 +133,9 @@ const DownloadButton = styled.button`
   background-size: cover; /* 이미지 크기를 버튼 크기에 맞게 조정 */
   border: none;
   border-radius: 35px;
-  color: black;
-  color: #e5cece;
+
+  color: #d9b2b5;
+
   font-size: 24px;
   cursor: pointer;
   padding: 10px 20px;

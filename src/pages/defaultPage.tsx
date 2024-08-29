@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
-import header_web from '../../public/assets/sub/caplus_pc_header_background.jpg';
-import text_logo from '../../public/assets/sub/caplus_text_logo.png';
-import image_logo from '../../public/assets/sub/image_logo.png';
-import red_fill_color from '../../public/assets/sub/red_fill_color.jpg';
+import header_web from '/assets/sub/caplus_pc_header_background.jpg';
+import text_logo from '/assets/sub/caplus_text_logo.png';
+import image_logo from '/assets/sub/image_logo.png';
+import red_fill_color from '/assets/sub/red_fill_color.jpg';
 
-// 웹용 asset
-import content_web from '../../public/assets/main/caplus_pc.jpg';
-
-// 모바일용 asset
-import content_mobile from '../../public/assets/main/caplus_mobile.jpg';
+import content_web from '/assets/main/caplus_pc.jpg';
+import content_mobile from '/assets/main/caplus_mobile.jpg';
 
 function DefaultPage() {
   return (
@@ -183,6 +180,10 @@ const ApplyContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 800px) {
+    bottom: 6%;
+  }
 `;
 
 const ApplyLink = styled.a`
@@ -199,11 +200,18 @@ const ApplyButton = styled.button`
   border: none;
   border-radius: 35px;
   color: black;
-  color: #e5cece;
+  color: #d9b2b5;
   font-size: 24px;
+  width: 250px; 
+
   cursor: pointer;
   padding: 10px 20px;
   position: relative;
   pointer-events: auto; /* 버튼을 클릭 가능하게 설정 */
   text-align: center; /* 버튼 텍스트 가운데 정렬 */
+
+  @media (max-width: 800px) {
+    font-size: 15px;
+    width: 150px; /* 버튼 너비 설정 */
+  }
 `;
