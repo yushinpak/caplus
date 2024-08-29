@@ -61,14 +61,6 @@ const Header = styled.div`
   }
 `;
 
-const HeaderSpace = styled.div`
-  height: 70px;
-
-  @media (min-width: 800px) {
-    height: 70px;
-  }
-`;
-
 const ButtonContainer = styled.div`
   position: fixed;
   right: 10%;

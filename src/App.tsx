@@ -6,8 +6,6 @@ import Layout from './components/layout';
 import DefaultPage from './pages/defaultPage';
 import DownloadApplicantForm from './pages/download_applicant_form';
 
-import styled from 'styled-components';
-
 const router = createBrowserRouter([
   {
     path: '/',
