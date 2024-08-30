@@ -64,8 +64,8 @@ function DefaultPage() {
             <WebSection src={ending} alt="엔딩" />
             <ApplyButtonContainer>
               <ApplyLink
-                href={`../public/applicant-form.docx`}
-                download="카플러스_50기_지원서.docx"
+                href={`/docs/application_form.docx`}
+                download="카플러스_50기_지원양식.docx"
               >
                 <ApplyButton>지원서 다운받기</ApplyButton>
               </ApplyLink>
@@ -87,8 +87,8 @@ function DefaultPage() {
             <MobileSection src={ending_mobile} alt="엔딩" />
             <MobileApplyButtonContainer>
               <MobileApplyLink
-                href={`../public/applicant-form.docx`}
-                download="카플러스_50기_지원서.docx"
+                href={`/docs/application_form.docx`}
+                download="카플러스_50기_지원양식.docx"
               >
                 <MobileApplyButton>지원서 다운받기</MobileApplyButton>
               </MobileApplyLink>
