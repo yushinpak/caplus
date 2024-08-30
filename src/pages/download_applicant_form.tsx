@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import header_web from '../assets/sub/caplus_pc_header_background.jpg';
-import text_logo from '../assets/sub/caplus_text_logo.png';
-import image_logo from '../assets/sub/image_logo.png';
-import red_fill_color from '../assets/sub/red_fill_color.jpg';
+import header_web from '/assets/sub/caplus_pc_header_background.jpg';
+import text_logo from '/assets/sub/caplus_text_logo.png';
+import image_logo from '/assets/sub/image_logo.png';
+import red_fill_color from '/assets/sub/red_fill_color.jpg';
 
 const DownloadApplicantForm = () => {
   return (
@@ -14,13 +14,13 @@ const DownloadApplicantForm = () => {
           <ImageLogo src={image_logo} alt="카플러스" />
         </Link>
         <ButtonContainer>
-          <a
+          <Link
             href="http://pf.kakao.com/_tlnhn/chat"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button>지원하기</Button>
-          </a>
+          </Link>
         </ButtonContainer>
       </Header>
       <a
@@ -78,19 +78,10 @@ const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 800px) {
-    right: 5%;
-    display: flex;
-    justify-content: flex-end;
-  }
 `;
 
 const Button = styled.button`
-  z-index: 1000;
-
-  color: #d9b2b5;
-  color: black;
+  color: white;
   background-color: transparent;
   border: none;
   cursor: pointer;

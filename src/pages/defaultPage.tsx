@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 
-import header_web from '../assets/sub/caplus_pc_header_background.jpg';
-import text_logo from '../assets/sub/caplus_text_logo.png';
-import image_logo from '../assets/sub/image_logo.png';
-import red_fill_color from '../assets/sub/red_fill_color.jpg';
+import header_web from '/assets/sub/caplus_pc_header_background.jpg';
+import text_logo from '/assets/sub/caplus_text_logo.png';
+import image_logo from '/assets/sub/image_logo.png';
+import red_fill_color from '/assets/sub/red_fill_color.jpg';
 
 // web asset
-import home from '../assets/main/pc_1.jpg';
-import introduce_caplus from '../assets/main/pc_2.jpg';
-import introduce_detail from '../assets/main/pc_3.jpg';
-import curriculum from '../assets/main/pc_4.jpg';
-import application_guide from '../assets/main/pc_5.jpg';
-import ending from '../assets/main/pc_6.jpg';
+import home from '/assets/main/pc_1.jpg';
+import introduce_caplus from '/assets/main/pc_2.jpg';
+import introduce_detail from '/assets/main/pc_3.jpg';
+import curriculum from '/assets/main/pc_4.jpg';
+import application_guide from '/assets/main/pc_5.jpg';
+import ending from '/assets/main/pc_6.jpg';
 
 // mobile asset
-import home_mobile from '../assets/main/mobile_1.jpg';
-import introduce_caplus_mobile from '../assets/main/mobile_2.jpg';
-import introduce_detail_mobile from '../assets/main/mobile_3.jpg';
-import curriculum_mobile from '../assets/main/mobile_4.jpg';
-import application_guide_mobile from '../assets/main/mobile_5.jpg';
-import ending_mobile from '../assets/main/mobile_6.jpg';
+import home_mobile from '/assets/main/mobile_1.jpg';
+import introduce_caplus_mobile from '/assets/main/mobile_2.jpg';
+import introduce_detail_mobile from '/assets/main/mobile_3.jpg';
+import curriculum_mobile from '/assets/main/mobile_4.jpg';
+import application_guide_mobile from '/assets/main/mobile_5.jpg';
+import ending_mobile from '/assets/main/mobile_6.jpg';
 
 function DefaultPage() {
   return (
