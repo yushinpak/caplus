@@ -5,13 +5,14 @@ import text_logo from '../assets/sub/caplus_text_logo.png';
 import image_logo from '../assets/sub/image_logo.png';
 import red_fill_color from '../assets/sub/red_fill_color.jpg';
 
-
 const DownloadApplicantForm = () => {
   return (
     <Container>
       <Header>
-        <TextLogo src={text_logo} alt="카플러스" />
-        <ImageLogo src={image_logo} alt="카플러스" />
+        <Link href="https://caplus.vercel.app/" rel="noopener noreferrer">
+          <TextLogo src={text_logo} alt="카플러스" />
+          <ImageLogo src={image_logo} alt="카플러스" />
+        </Link>
         <ButtonContainer>
           <a
             href="http://pf.kakao.com/_tlnhn/chat"
@@ -33,6 +34,15 @@ const DownloadApplicantForm = () => {
 };
 
 export default DownloadApplicantForm;
+
+const Link = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -109,6 +119,8 @@ const TextLogo = styled.img`
   left: 10%;
   width: 100px;
 
+  pointer-events: auto;
+
   @media (max-width: 800px) {
     left: 5%;
     width: 80px; /* 모바일에서 로고 크기 조정 */
@@ -120,6 +132,8 @@ const ImageLogo = styled.img`
   left: 50%;
   transform: translateX(-50%); /* 중앙 정렬 */
   width: 30px;
+
+  pointer-events: auto;
 
   @media (max-width: 800px) {
     width: 25px; /* 모바일에서 로고 크기 조정 */
