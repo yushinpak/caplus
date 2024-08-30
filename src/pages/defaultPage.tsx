@@ -6,17 +6,12 @@ import image_logo from '/assets/sub/image_logo.png';
 import red_fill_color from '/assets/sub/red_fill_color.jpg';
 
 // web asset
-// 임시 파일
-import home from '../assets/main/1home.png';
-import symbol from '../assets/main/2symbol.png';
-import introduce from '../assets/main/3introduce.png';
-import detail_1 from '../assets/main/4.png';
-import detail_2 from '../assets/main/5.png';
-import detail_3 from '../assets/main/6.png';
-import then_how from '../assets/main/7.png';
-import curriculum from '../assets/main/8.png';
-import apply from '../assets/main/9.png';
-import ending from '../assets/main/10.png';
+import home from '../assets/main/pc_1.jpg';
+import introduce_caplus from '../assets/main/pc_2.jpg'; 
+import introduce_detail from '../assets/main/pc_3.jpg';
+import curriculum from '../assets/main/pc_4.jpg';
+import application_guide from '../assets/main/pc_5.jpg';
+import ending from '../assets/main/pc_6.jpg';
 
 // mobile asset
 import content_mobile from '/assets/main/caplus_mobile.jpg';
@@ -31,7 +26,7 @@ function DefaultPage() {
           </Link>
           <ImageLogo src={image_logo} alt="카플러스" />
           <ButtonContainer>
-            <Link href="#symbol-section">
+            <Link href="#introduce">
               <Button>소개</Button>
             </Link>
             <Link href="#curriculum">
@@ -52,14 +47,10 @@ function DefaultPage() {
         <HeaderSpace />
         <ContentContainer>
           <WebSection src={home} id="home-section" alt="홈 이미지" />
-          <WebSection id="symbol-section" src={symbol} alt="심볼" />
-          <WebSection src={introduce} alt="학회 소개" />
-          <WebSection src={detail_1} alt="설명1" />
-          <WebSection src={detail_2} alt="설명2" />
-          <WebSection src={detail_3} alt="설명3" />
-          <WebSection src={then_how} alt="then_how" />
+          <WebSection src={introduce_caplus} alt="학회 소개" />
+          <WebSection id="introduce" src={introduce_detail} alt="디테일 학회 소개" />
           <WebSection id="curriculum" src={curriculum} alt="커리큘럼" />
-          <WebSection id="apply" src={apply} alt="지원안내" />
+          <WebSection id="apply" src={application_guide} alt="지원안내" />
           <WebSection src={ending} alt="엔딩" />
           <MobileSection src={content_mobile} alt="photo" />
           <ApplyContainer>
@@ -86,29 +77,29 @@ function DefaultPage() {
 export default DefaultPage;
 
 const WebSection = styled.img`
-  // display: none;
+  display: none;
 
-  // @media (min-width: 768px) {
-  // display: flex;
-  pointer-events: none;
-  display: block;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
-
-  // object-fit: cover
-  // }
+  @media (min-width: 768px) {
+    display: flex;
+    pointer-events: none;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 const MobileSection = styled.img`
-  display: none;
+  /* 모바일에서는 보이도록 설정 */
+  display: block;
+  width: 100%;
 
-  @media (max-width: 768px) {
-    content: url(${content_mobile});
-    min-height: 50vh;
+  @media (min-width: 768px) {
+    /* 데스크탑에서는 숨김 */
+    display: none;
   }
 `;
 
@@ -176,6 +167,11 @@ const ButtonContainer = styled.div`
     right: 5%;
     display: flex;
     justify-content: flex-end;
+
+    /* 모바일에서는 마지막 자식 요소를 제외한 나머지 요소를 숨김 */
+    & > *:not(:last-child) {
+      display: none;
+    }
   }
 `;
 
