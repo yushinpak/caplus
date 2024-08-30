@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import header_web from '/assets/sub/caplus_pc_header_background.jpg';
-import text_logo from '/assets/sub/caplus_text_logo.png';
-import image_logo from '/assets/sub/image_logo.png';
-import red_fill_color from '/assets/sub/red_fill_color.jpg';
+import header_web from '../assets/sub/caplus_pc_header_background.jpg';
+import text_logo from '../assets/sub/caplus_text_logo.png';
+import image_logo from '../assets/sub/image_logo.png';
+import red_fill_color from '../assets/sub/red_fill_color.jpg';
 
 // web asset
 import home from '../assets/main/pc_1.jpg';
@@ -14,7 +14,7 @@ import application_guide from '../assets/main/pc_5.jpg';
 import ending from '../assets/main/pc_6.jpg';
 
 // mobile asset
-import content_mobile from '/assets/main/caplus_mobile.jpg';
+import content_mobile from '../assets/main/caplus_mobile.jpg';
 
 function DefaultPage() {
   return (
