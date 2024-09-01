@@ -7,13 +7,18 @@ import red_fill_color from '/assets/sub/red_fill_color.jpg';
 
 const DownloadApplicantForm = () => {
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/docs/form.docx';
-    link.download = 'CAPLUS_50기_정규_지원서.docx';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    fetch('/docs/form.docx')
+      .then(response => response.blob())
+      .then(blob => {
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = 'CAPLUS_50기_정규_지원서.docx';
+        link.click();
+        window.URL.revokeObjectURL(link.href); // 메모리 해제
+      })
+      .catch(error => console.error('Download error:', error));
   };
+  
 
   return (
     <Container>

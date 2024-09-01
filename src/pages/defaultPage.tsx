@@ -23,12 +23,16 @@ import ending_mobile from '/assets/main/mobile_6.jpg';
 
 function DefaultPage() {
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/docs/form.docx';
-    link.download = 'CAPLUS_50기_정규_지원서.docx';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    fetch('/docs/form.docx')
+      .then((response) => response.blob())
+      .then((blob) => {
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = 'CAPLUS_50기_정규_지원서.docx';
+        link.click();
+        window.URL.revokeObjectURL(link.href); // 메모리 해제
+      })
+      .catch((error) => console.error('Download error:', error));
   };
 
   return (
@@ -72,14 +76,9 @@ function DefaultPage() {
           <EndingContainer>
             <WebSection src={ending} alt="엔딩" />
             <ApplyButtonContainer>
-              {/* <ApplyLink
-                href={`/docs/form.docx`}
-                download="CAPLUS_50기_정규_지원서.docx"
-              > */}
               <ApplyButton onClick={handleDownload}>
                 지원서 다운받기
               </ApplyButton>
-              {/* </ApplyLink> */}
               <ApplyLink
                 href="http://pf.kakao.com/_tlnhn/chat"
                 target="_blank"
@@ -97,12 +96,9 @@ function DefaultPage() {
           <EndingContainer>
             <MobileSection src={ending_mobile} alt="엔딩" />
             <MobileApplyButtonContainer>
-              {/* <MobileApplyLink
-                href={`/docs/form.docx`}
-                download="CAPLUS_50기_정규_지원서.docx"
-              > */}
-                <MobileApplyButton onClick={handleDownload}>지원서 다운받기</MobileApplyButton>
-              {/* </MobileApplyLink> */}
+              <MobileApplyButton onClick={handleDownload}>
+                지원서 다운받기
+              </MobileApplyButton>
               <ApplyLink
                 href="http://pf.kakao.com/_tlnhn/chat"
                 target="_blank"
