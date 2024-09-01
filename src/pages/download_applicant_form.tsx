@@ -24,7 +24,7 @@ const DownloadApplicantForm = () => {
         </ButtonContainer>
       </Header>
       <a
-        href={`/docs/CAPLUS_50기_정규_지원서.docx`}
+        href={`/docs/form.docx`}
         download="CAPLUS_50기_정규_지원서.docx"
       >
         <DownloadButton>지원서 word 파일 다운로드</DownloadButton>

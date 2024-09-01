@@ -64,7 +64,7 @@ function DefaultPage() {
             <WebSection src={ending} alt="엔딩" />
             <ApplyButtonContainer>
               <ApplyLink
-                href={`/docs/CAPLUS_50기_정규_지원서.docx`}
+                href={`/docs/form.docx`}
                 download="CAPLUS_50기_정규_지원서.docx"
               >
                 <ApplyButton>지원서 다운받기</ApplyButton>
@@ -87,7 +87,7 @@ function DefaultPage() {
             <MobileSection src={ending_mobile} alt="엔딩" />
             <MobileApplyButtonContainer>
               <MobileApplyLink
-                href={`/docs/CAPLUS_50기_정규_지원서.docx`}
+                href={`/docs/form.docx`}
                 download="CAPLUS_50기_정규_지원서.docx"
               >
                 <MobileApplyButton>지원서 다운받기</MobileApplyButton>
