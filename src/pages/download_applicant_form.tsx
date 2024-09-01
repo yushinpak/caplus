@@ -6,6 +6,15 @@ import image_logo from '/assets/sub/image_logo.png';
 import red_fill_color from '/assets/sub/red_fill_color.jpg';
 
 const DownloadApplicantForm = () => {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/docs/form.docx';
+    link.download = 'CAPLUS_50기_정규_지원서.docx';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <Container>
       <Header>
@@ -23,12 +32,10 @@ const DownloadApplicantForm = () => {
           </Link>
         </ButtonContainer>
       </Header>
-      <a
-        href={`/docs/form.docx`}
-        download="CAPLUS_50기_정규_지원서.docx"
-      >
-        <DownloadButton>지원서 word 파일 다운로드</DownloadButton>
-      </a>
+
+      <DownloadButton onClick={handleDownload}>
+        지원서 word 파일 다운로드
+      </DownloadButton>
     </Container>
   );
 };

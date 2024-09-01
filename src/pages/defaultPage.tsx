@@ -22,6 +22,15 @@ import application_guide_mobile from '/assets/main/mobile_5.jpg';
 import ending_mobile from '/assets/main/mobile_6.jpg';
 
 function DefaultPage() {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/docs/form.docx';
+    link.download = 'CAPLUS_50기_정규_지원서.docx';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <Container>
@@ -63,12 +72,14 @@ function DefaultPage() {
           <EndingContainer>
             <WebSection src={ending} alt="엔딩" />
             <ApplyButtonContainer>
-              <ApplyLink
+              {/* <ApplyLink
                 href={`/docs/form.docx`}
                 download="CAPLUS_50기_정규_지원서.docx"
-              >
-                <ApplyButton>지원서 다운받기</ApplyButton>
-              </ApplyLink>
+              > */}
+              <ApplyButton onClick={handleDownload}>
+                지원서 다운받기
+              </ApplyButton>
+              {/* </ApplyLink> */}
               <ApplyLink
                 href="http://pf.kakao.com/_tlnhn/chat"
                 target="_blank"
@@ -86,12 +97,12 @@ function DefaultPage() {
           <EndingContainer>
             <MobileSection src={ending_mobile} alt="엔딩" />
             <MobileApplyButtonContainer>
-              <MobileApplyLink
+              {/* <MobileApplyLink
                 href={`/docs/form.docx`}
                 download="CAPLUS_50기_정규_지원서.docx"
-              >
-                <MobileApplyButton>지원서 다운받기</MobileApplyButton>
-              </MobileApplyLink>
+              > */}
+                <MobileApplyButton onClick={handleDownload}>지원서 다운받기</MobileApplyButton>
+              {/* </MobileApplyLink> */}
               <ApplyLink
                 href="http://pf.kakao.com/_tlnhn/chat"
                 target="_blank"
@@ -144,12 +155,12 @@ const MobileApplyButtonContainer = styled.div`
 
 const ApplyLink = styled.a`
   text-decoration: none;
-  pointer-events: auto; 
+  pointer-events: auto;
 `;
 
 const MobileApplyLink = styled.a`
   text-decoration: none;
-  pointer-events: auto; 
+  pointer-events: auto;
 `;
 
 const ApplyButton = styled.button`
@@ -179,7 +190,7 @@ const ApplyButton = styled.button`
 
 const MobileApplyButton = styled.button`
   @media (max-width: 768px) {
-    display: flex; 
+    display: flex;
     justify-content: center;
     font-family: 'Pretendard-Regular';
     background: url(${red_fill_color}) no-repeat center center;
